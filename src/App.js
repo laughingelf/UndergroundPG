@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Homepage from './pages/Homepage';
+import SawyersPlayground from './pages/SawyersPlayground';
+import SawyerMath from './pages/SawyerMath';
+import SawyerLetters from './pages/SawyerLetters';
+import SawyerWords from './pages/SawyerWords';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Navbar />
+
+      <Routes>
+
+        <Route path='/' element={<Homepage />} />
+        <Route path='/sawyers-playground' element={<SawyersPlayground />} />
+        <Route path='/sawyers-playground/math' element={<SawyerMath />} />
+        <Route path='/sawyers-playground/letters' element={<SawyerLetters />} />
+        <Route path='/sawyers-playground/words' element={<SawyerWords />} />
+
+
+      </Routes>
+
+
     </div>
   );
 }
