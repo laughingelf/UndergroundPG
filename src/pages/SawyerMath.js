@@ -1,17 +1,75 @@
-import { Link } from "react-router-dom"
-import { useState } from "react"
+
+import { useState, useEffect } from "react"
 
 
 function SawyerMath() {
 
     const [toggle, setToggle] = useState(false)
+    const [firstNum, setFirstNum] = useState(0)
+    const [secondNum, setSecondNum] = useState(0)
+    const [answer, setAnswer] = useState(0)
+    const [score, setScore] = useState(0)
+    const [functions, setFunctions] = useState('+')
 
+    let solution = 0
+
+
+    const getRandomNumbers = (max) => {
+        return Math.floor(Math.random() * max)
+    }
 
 
     const startGame = () => {
         setToggle(true)
-        console.log('Pressing')
     }
+
+    const handleFunctions = (e) => {
+        console.log(e.target.innerHTML)
+        switch (e.target.innerHTML) {
+            case '+':
+                setFunctions('+')
+                break;
+            case '-':
+                setFunctions('-')
+                break;
+            case '*':
+                setFunctions('*')
+                break;
+
+        }
+    }
+
+    const handleAnswer = (e) => {
+        setAnswer(e.target.value)
+    }
+
+
+    const submitAnswer = (e) => {
+        e.preventDefault()
+        switch (functions) {
+            case '+':
+                solution = firstNum + secondNum
+                break;
+            case '-':
+                solution = firstNum - secondNum
+                break;
+            case '*':
+                solution = firstNum * secondNum
+                break;
+        }
+
+        if (solution == answer) {
+            setScore(score + 1)
+            e.target.reset()
+        }
+    }
+
+
+    useEffect(() => {
+        setFirstNum(getRandomNumbers(5))
+        setSecondNum(getRandomNumbers(6))
+
+    }, [score])
 
 
     return (
@@ -21,10 +79,9 @@ function SawyerMath() {
                 <h1>Math</h1>
             </div>
             <div id="math-buttons">
-                <button className="button math-button">+ Addition</button>
-                <button className="button math-button">- Subtraction</button>
-                <button className="button math-button">* Multiplication</button>
-                <button className="button math-button">/ Division</button>
+                <button className="button math-button" onClick={handleFunctions}>+</button>
+                <button className="button math-button" onClick={handleFunctions}>-</button>
+                <button className="button math-button" onClick={handleFunctions}>*</button>
 
             </div>
 
@@ -36,7 +93,24 @@ function SawyerMath() {
                 </div>
 
 
-                : null}
+                :
+
+                <div>
+                    <form onSubmit={submitAnswer}>
+                        <h1>{firstNum} {functions} {secondNum}</h1>
+                        <input type='number' id='mathAnswer' onChange={handleAnswer} />
+                        <br />
+                        <button type="submit" className="math-submit">Submit</button>
+
+
+                        <h1>Score: {score}</h1>
+                    </form>
+                </div>
+
+            }
+
+
+
 
 
 

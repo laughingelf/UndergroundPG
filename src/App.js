@@ -7,6 +7,8 @@ import SawyersPlayground from './pages/SawyersPlayground';
 import SawyerMath from './pages/SawyerMath';
 import SawyerLetters from './pages/SawyerLetters';
 import SawyerWords from './pages/SawyerWords';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path='/sawyers-playground/math' element={<SawyerMath />} />
         <Route path='/sawyers-playground/letters' element={<SawyerLetters />} />
         <Route path='/sawyers-playground/words' element={<SawyerWords />} />
+        <Route path='/auth/login' element={<LoginPage />} />
+        <Route path='/auth/signup' element={<SignupPage />} />
 
 
       </Routes>
