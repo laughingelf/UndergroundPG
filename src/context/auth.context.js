@@ -1,5 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { get } from "../services/authService"
 
 
 const AuthContext = createContext()
@@ -20,6 +21,14 @@ function AuthContextProvider({ children }) {
 
     const authenicateUser = () => {
         const storedToken = localStorage.getItem('authToken')
+
+        if (storedToken) {
+            get('/auth/verify')
+                .then((results) => {
+                    const user = results.data
+                    console.log('The response: ', user)
+                })
+        }
     }
 
 
@@ -29,8 +38,10 @@ function AuthContextProvider({ children }) {
         navigate('/auth/login')
     }
 
+
+
     return (
-        <AuthContext.Provider value={{ storeToken, setUser, authenicateUser, logOutUser }}>
+        <AuthContext.Provider value={{ storeToken, user, setUser, authenicateUser, logOutUser }}>
             {children}
         </AuthContext.Provider>
     )

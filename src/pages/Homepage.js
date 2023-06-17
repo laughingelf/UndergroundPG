@@ -5,7 +5,7 @@ function Homepage() {
         <div>
 
             <div id="logo">
-                <img src="./images/Underground-pg-skel.png" alt="logo" />
+                <img src="./images/Underground-pg-fafi-offwhite.png" alt="logo" />
 
 
             </div>

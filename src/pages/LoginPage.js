@@ -26,7 +26,7 @@ function LoginPage() {
         axios.post(baseUrl + '/auth/login', currUser)
             .then((results) => {
                 storeToken(results.data.authToken)
-                authenicateUser()
+                // authenicateUser()
                 navigate('/')
             })
             .catch((err) => {
