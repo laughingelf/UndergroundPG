@@ -21,6 +21,7 @@ function AuthContextProvider({ children }) {
 
     const authenicateUser = () => {
         const storedToken = localStorage.getItem('authToken')
+        console.log('storedToken', storedToken)
 
         if (storedToken) {
             get('/auth/verify')
