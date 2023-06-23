@@ -10,6 +10,7 @@ import SawyerWords from './pages/SawyerWords';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import AboutMe from './pages/AboutMe';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
 
       </Routes>
 
+      <Footer />
 
     </div>
   );
