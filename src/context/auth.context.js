@@ -21,24 +21,37 @@ function AuthContextProvider({ children }) {
 
     const authenicateUser = () => {
         const storedToken = localStorage.getItem('authToken')
-        console.log('storedToken', storedToken)
 
         if (storedToken) {
             get('/auth/verify')
                 .then((results) => {
-                    const user = results.data
-                    console.log('The response: ', user)
+                    const resUser = results.data
+                    setUser(resUser)
+                    console.log('setting user', resUser)
+
                 })
+                .catch((err) => {
+                    console.log(err)
+                    setUser(null)
+                    removeToken()
+                })
+        } else {
+            console.log('no token!!!!!!!!!!!!!')
+            setUser(null)
+            removeToken()
         }
     }
 
-
     const logOutUser = () => {
         removeToken()
-        authenicateUser()
+        // authenicateUser()
         navigate('/auth/login')
     }
 
+
+    useEffect(() => {
+        authenicateUser()
+    }, [])
 
 
     return (

@@ -95,7 +95,7 @@ function SawyerLetters() {
     }
 
     return (
-        <>
+        <div className="mb-8 min-h-screen flex flex-col">
 
             <div className="flex justify-center mt-8">
                 <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg py-2 px-6 rounded border border-black shadow-xl" value='free' onClick={handleFunctions}>
@@ -120,7 +120,7 @@ function SawyerLetters() {
                     </button>
                 ))}
             </div>
-        </>
+        </div>
 
 
 

@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import AboutMe from './pages/AboutMe';
 import Footer from './components/Footer';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/auth/login' element={<LoginPage />} />
         <Route path='/auth/signup' element={<SignupPage />} />
         <Route path='/about-me' element={<AboutMe />} />
+        <Route path='/user/profile' element={<Profile />} />
 
 
       </Routes>

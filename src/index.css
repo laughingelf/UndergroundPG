@@ -4,6 +4,8 @@
 
 
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -13,6 +15,11 @@ body {
   background-image: url('../public/images/bimmer.png');
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100%;
+}
+
+.footer {
+  margin-top: auto;
 }
 
 code {

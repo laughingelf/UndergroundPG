@@ -18,11 +18,11 @@ export default function AboutMe() {
                     </div>
                     <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt className="text-sm font-medium leading-6 text-gray-900">Type of Work</dt>
-                        <dd className="mt-1 text-sm leading-6 text-white sm:col-span-2 sm:mt-0">FullStack Developer, Automation</dd>
+                        <dd className="mt-1 text-sm leading-6 text-white sm:col-span-2 sm:mt-0 bg-gray-400 bg-opacity-60 rounded-lg p-4">FullStack Developer, Automation</dd>
                     </div>
                     <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt className="text-sm font-medium leading-6 text-gray-900">Email Address</dt>
-                        <dd className="mt-1 text-sm leading-6 text-white sm:col-span-2 sm:mt-0">jaygery90@gmail.com</dd>
+                        <dd className="mt-1 text-sm leading-6 text-white sm:col-span-2 sm:mt-0 bg-gray-400 bg-opacity-60 rounded-lg p-4">jaygery90@gmail.com</dd>
                     </div>
                     <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt className="text-sm font-medium leading-6 text-gray-900">About Me</dt>

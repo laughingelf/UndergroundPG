@@ -9,10 +9,11 @@ function Homepage() {
 
     useEffect(() => {
         console.log('users', user)
-    }, [])
+        setUser(user)
+    }, [user])
 
     return (
-        <div>
+        <div className="min-h-screen flex flex-col">
 
             <div id="logo">
                 <img src="./images/Underground-pg-fafi-offwhite.png" alt="logo" />

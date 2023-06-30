@@ -64,6 +64,10 @@ function SawyerMath() {
         }
     }
 
+    const imDone = () => {
+        console.log('im done')
+    }
+
 
     useEffect(() => {
         setFirstNum(getRandomNumbers(5))
@@ -73,7 +77,7 @@ function SawyerMath() {
 
 
     return (
-        <div>
+        <div className="min-h-screen">
 
             <div>
                 <h1>Math Practice</h1>
@@ -115,16 +119,22 @@ function SawyerMath() {
 
 
                 :
+                <div>
+                    <div className="bg-gray-100 p-4 rounded-lg shadow-lg w-4/5 sm:w-3/5 md:w-3/5 lg:w-2/5 xl:w-1/3 mx-auto flex flex-col justify-center items-center mt-8">
+                        <form onSubmit={submitAnswer} className="flex flex-col space-y-4 items-center">
+                            <h1 className="text-xl font-bold">{firstNum} {functions} {secondNum}</h1>
+                            <input type='number' id='mathAnswer' onChange={handleAnswer} className="border border-gray-300 rounded-lg p-2 w-24" />
+                            <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg">
+                                Submit
+                            </button>
+                            <button onClick={imDone} type="button" className="bg-green-500 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded-lg">
+                                Im Done
+                            </button>
+                            <h1 className="text-lg font-semibold">Score: {score}</h1>
+                        </form>
+                    </div>
 
-                <div className="bg-gray-100 p-4 rounded-lg shadow-lg w-4/5 sm:w-3/5 md:w-3/5 lg:w-2/5 xl:w-1/3 mx-auto flex flex-col justify-center items-center mt-8">
-                    <form onSubmit={submitAnswer} className="flex flex-col space-y-4 items-center">
-                        <h1 className="text-xl font-bold">{firstNum} {functions} {secondNum}</h1>
-                        <input type='number' id='mathAnswer' onChange={handleAnswer} className="border border-gray-300 rounded-lg p-2 w-24" />
-                        <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg">
-                            Submit
-                        </button>
-                        <h1 className="text-lg font-semibold">Score: {score}</h1>
-                    </form>
+
                 </div>
 
 
